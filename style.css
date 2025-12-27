@@ -1,0 +1,255 @@
+:root {
+  /* paleta de colores */
+  --color-primary: #a78bfa;       /* Morado pastel elegante */
+  --color-primary-dark: #7c3aed;  /* Morado profundo para acentos */
+  --color-secondary: #f3e8ff;     /* Lavanda clara, complementa el morado */
+  --color-accent: #f9a8d4;        /* Rosa claro moderno (no infantil) */
+  
+  /* 🌿 Tonos neutros */
+  --color-background: #f9fafb;    /* Blanco con un tinte gris suave */
+  --color-surface: #ffffff;       /* Fondo puro para tarjetas o contenedores */
+  --color-border: #e5e7eb;        /* Bordes y divisores */
+  --color-text: #4b5563;          /* Gris medio, legible y elegante */
+  --color-text-light: #9ca3af;    /* Gris claro, para detalles */
+
+  /* ✨ Extras para efectos */
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-hover: #ede9fe;         /* Morado muy suave al pasar el mouse */
+  --color-success: #86efac;       /* Verde menta pastel */
+  --color-error: #fca5a5;         /* Rosa coral suave */
+
+  /*  Gradiente sutil de fondo */
+  --gradient: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-background) 100%
+  );
+}
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--color-background);
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;   
+}
+.btn {
+    color: var(--color-primary-dark);
+    font-size: 1.1rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.5rem;
+    background-color: var(--color-primary);
+    border: none;
+    position: 0.5rem;
+    bottom: 0.5rem;
+    cursor: pointer;
+
+}
+
+h1, h2, h3, p {
+    margin:0;
+
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid var(--color-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 50%;
+    width: 60%;
+    box-shadow: 0 1rem 3rem 1rem rgba(0,23,71,0.2);
+    max-width: 30rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    height: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+
+}
+.input {
+    display: flex;
+    position: relative;
+}
+.input-field {
+    position: relative;
+    width: 100%;
+    padding: 0.5rem;
+    border: 0.06rem solid var(--color-border);
+    font-size: 1rem;
+    border-radius: 1rem;
+     cursor: pointer;
+}
+.todo-container {
+    display: flex;
+    gap: 1rem;
+
+}
+ul {
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+
+}
+
+/* Estilo para cada tarea en la lista */
+li {
+    display: flex;                     /* alinear elementos en fila */
+    flex-direction: row;               /* checkbox + texto lado a lado */
+    align-items: center;               /* centrado vertical */
+    gap: 0.8rem;                       /* espacio entre checkbox y texto */
+    background-color: var(--color-background);
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    color: var(--color-text);
+}
+
+/* Asegura que la lista apile las tareas una debajo de otra */
+ul, .scroll { 
+    display: flex;
+    flex-direction: column;            /* apila los <li> verticalmente */
+    gap: 0.8rem;                       /* espacio entre tareas */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Checkbox más visible */
+.todo-Checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    accent-color: var(--color-accent);
+}
+
+/* Texto dentro del <li> */
+li p {
+    margin: 0;
+    flex: 1;
+}
+
+/* Tarea completada */
+.completed {
+    text-decoration: line-through;
+    color: var (--color-success);
+    opacity: 0.7;
+}
+
+.disabled  {
+    display: flex;
+    text-decoration: line-through;
+
+}
+#todoList P {
+    color: var(--color-text);
+}
+
+.input [type="checkbox"] ::before{
+    content: "\2713";
+    display:inline-block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.06rem solid var(--color-text);
+    border-radius: 60%;
+    color: transparent;
+}
+
+.input [type="checkbox"] ::before ::after{
+    content: "\2713";
+    display:inline-block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.06rem solid var(--color-text-light);
+    border-radius: 50%;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    border: 0.06 rem solid var(--color-border);
+
+}
+
+.counter {
+    border: 0.06rem solid var(--color-border);
+
+}
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    color: var(--color-text);
+
+}
+.counter-container p {
+    align-self: center;
+}
+
+.counter-container #btnClear {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: 1rem;
+    display: flex;
+}
+.footer {
+    display: flex;
+    gap: 1.8rem;
+    background-color: var(--color-background);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: var(--color-primary-dark);
+}
+
+.btnClear {
+    border: none;
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: 0.8rem;
+    display: flex;
+}
+
+.scroll {
+    height:15rem;
+    scrollbar-width: thin;
+}
+.scroll::-webkit-scrollbar {
+    width: 0.5rem;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 1rem;
+}
+.scroll::-webkit-scrollbar-track {
+    background-color: var(--color-background);
+    border-radius: 1rem;
+    display: none;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.delete-btn:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
