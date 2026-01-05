@@ -1,31 +1,30 @@
 :root {
-  /* paleta de colores */
-  --color-primary: #a78bfa;       /* Morado pastel elegante */
-  --color-primary-dark: #7c3aed;  /* Morado profundo para acentos */
-  --color-secondary: #f3e8ff;     /* Lavanda clara, complementa el morado */
-  --color-accent: #f9a8d4;        /* Rosa claro moderno (no infantil) */
+  /* 🎨 color palette */
+  --color-primary: #a78bfa;       /* Elegant pastel purple */
+  --color-primary-dark: #7c3aed;  /* Deep purple for accents */
+  --color-secondary: #f3e8ff;     /* Light lavender, complements purple */
+  --color-accent: #f9a8d4;        /* Soft modern pink (not childish) */
   
-  /* 🌿 Tonos neutros */
-  --color-background: #f9fafb;    /* Blanco con un tinte gris suave */
-  --color-surface: #ffffff;       /* Fondo puro para tarjetas o contenedores */
-  --color-border: #e5e7eb;        /* Bordes y divisores */
-  --color-text: #4b5563;          /* Gris medio, legible y elegante */
-  --color-text-light: #9ca3af;    /* Gris claro, para detalles */
+  /* 🌿 Neutral tones */
+  --color-background: #f9fafb;    /* White with a soft gray tint */
+  --color-surface: #ffffff;       /* Pure white for cards or containers */
+  --color-border: #e5e7eb;        /* Borders and dividers */
+  --color-text: #4b5563;          /* Medium gray, readable and elegant */
+  --color-text-light: #9ca3af;    /* Light gray, for details */
 
-  /* ✨ Extras para efectos */
+  /* ✨ Extra effects */
   --color-shadow: rgba(0, 0, 0, 0.08);
-  --color-hover: #ede9fe;         /* Morado muy suave al pasar el mouse */
-  --color-success: #86efac;       /* Verde menta pastel */
-  --color-error: #fca5a5;         /* Rosa coral suave */
+  --color-hover: #ede9fe;         /* Very soft purple on hover */
+  --color-success: #86efac;       /* Pastel mint green */
+  --color-error: #fca5a5;         /* Soft coral pink */
 
-  /*  Gradiente sutil de fondo */
+  /* 🎆 Subtle background gradient */
   --gradient: linear-gradient(
     135deg,
     var(--color-secondary) 0%,
     var(--color-background) 100%
   );
 }
-
 
 body {
     margin: 0;
@@ -36,6 +35,7 @@ body {
     justify-content: space-evenly;
     align-items: center;   
 }
+
 .btn {
     color: var(--color-primary-dark);
     font-size: 1.1rem;
@@ -47,12 +47,10 @@ body {
     position: 0.5rem;
     bottom: 0.5rem;
     cursor: pointer;
-
 }
 
 h1, h2, h3, p {
-    margin:0;
-
+    margin: 0;
 }
 
 .todo {
@@ -73,12 +71,13 @@ h2 {
     height: 2rem;
     color: var(--color-primary);
     text-align: center;
-
 }
+
 .input {
     display: flex;
     position: relative;
 }
+
 .input-field {
     position: relative;
     width: 100%;
@@ -86,43 +85,38 @@ h2 {
     border: 0.06rem solid var(--color-border);
     font-size: 1rem;
     border-radius: 1rem;
-     cursor: pointer;
+    cursor: pointer;
 }
+
 .todo-container {
     display: flex;
     gap: 1rem;
-
 }
-ul {
+
+/* Ensures tasks stack vertically */
+ul, .scroll { 
+    display: flex;
+    flex-direction: column;            /* stack <li> vertically */
+    gap: 0.8rem;                       /* space between tasks */
     padding: 0;
     margin: 0;
+    list-style: none;
     overflow-y: scroll;
-
 }
 
-/* Estilo para cada tarea en la lista */
+/* Style for each task item */
 li {
-    display: flex;                     /* alinear elementos en fila */
-    flex-direction: row;               /* checkbox + texto lado a lado */
-    align-items: center;               /* centrado vertical */
-    gap: 0.8rem;                       /* espacio entre checkbox y texto */
+    display: flex;                     /* align elements horizontally */
+    flex-direction: row;               /* checkbox + text side by side */
+    align-items: center;               /* vertical alignment */
+    gap: 0.8rem;                       /* spacing between checkbox and text */
     background-color: var(--color-background);
     border-radius: 0.5rem;
     padding: 0.6rem 0.8rem;
     color: var(--color-text);
 }
 
-/* Asegura que la lista apile las tareas una debajo de otra */
-ul, .scroll { 
-    display: flex;
-    flex-direction: column;            /* apila los <li> verticalmente */
-    gap: 0.8rem;                       /* espacio entre tareas */
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-/* Checkbox más visible */
+/* Larger, more visible checkbox */
 .todo-Checkbox {
     width: 1.2rem;
     height: 1.2rem;
@@ -130,13 +124,13 @@ ul, .scroll {
     accent-color: var(--color-accent);
 }
 
-/* Texto dentro del <li> */
+/* Task text inside <li> */
 li p {
     margin: 0;
     flex: 1;
 }
 
-/* Tarea completada */
+/* Completed task */
 .completed {
     text-decoration: line-through;
     color: var (--color-success);
@@ -146,12 +140,13 @@ li p {
 .disabled  {
     display: flex;
     text-decoration: line-through;
-
 }
+
 #todoList P {
     color: var(--color-text);
 }
 
+/* Checkbox customization */
 .input [type="checkbox"] ::before{
     content: "\2713";
     display:inline-block;
@@ -180,31 +175,24 @@ li p {
     color: var(--color-primary);
     background-color: var(--color-background);
     border: 0.06 rem solid var(--color-border);
-
 }
 
 .counter {
     border: 0.06rem solid var(--color-border);
-
 }
+
 .counter-container {
     display: flex;
     justify-content: space-between;
     height: 2rem;
     color: var(--color-text);
-
 }
+
 .counter-container p {
     align-self: center;
 }
 
-.counter-container #btnClear {
-    border: none;
-    background-color: transparent;
-    color: var(--color-text);
-    font-size: 1rem;
-    display: flex;
-}
+/* Footer section */
 .footer {
     display: flex;
     gap: 1.8rem;
@@ -214,6 +202,7 @@ li p {
     color: var(--color-primary-dark);
 }
 
+/* Button for clearing all tasks */
 .btnClear {
     border: none;
     background-color: transparent;
@@ -222,23 +211,28 @@ li p {
     display: flex;
 }
 
+/* Custom scroll style */
 .scroll {
     height:15rem;
     scrollbar-width: thin;
 }
+
 .scroll::-webkit-scrollbar {
     width: 0.5rem;
 }
+
 .scroll::-webkit-scrollbar-thumb {
     background-color: var(--color-border);
     border-radius: 1rem;
 }
+
 .scroll::-webkit-scrollbar-track {
     background-color: var(--color-background);
     border-radius: 1rem;
     display: none;
 }
 
+/* Delete button for individual tasks */
 .delete-btn {
   background: transparent;
   border: none;
